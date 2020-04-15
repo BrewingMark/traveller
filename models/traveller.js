@@ -29,7 +29,13 @@ Traveller.prototype.calculateTotalDistanceTravelled = function () {
 };
 
 Traveller.prototype.getUniqueModesOfTransport = function () {
-
+  const uniqueModesOfTransport = [];
+  this.journeys.forEach((journey) => {
+    if (uniqueModesOfTransport.includes(journey.transport) === false) {
+      uniqueModesOfTransport.push(journey.transport);
+    }
+  });
+  return uniqueModesOfTransport;
 };
 
 
